@@ -625,6 +625,91 @@
     max-width: 520px;
   }
 
+  /* ===== Also on Show ===== */
+  .also-section {
+    text-align: center;
+    margin: 96px 0 48px;
+  }
+  .also-card {
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+    max-width: 600px;
+    margin: 28px auto 0;
+    padding: 18px;
+    border: 1px solid var(--rule);
+    background: linear-gradient(180deg, #ffffff 0%, var(--paper-deep) 100%);
+    text-align: left;
+    transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+    color: var(--ink) !important;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(58,28,74,0.06);
+  }
+  .also-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(58,28,74,0.16);
+    border-color: var(--gold);
+  }
+  .also-thumb {
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    background: var(--paper-deep);
+  }
+  .also-thumb img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.6s ease;
+  }
+  .also-card:hover .also-thumb img { transform: scale(1.05); }
+  .also-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4px 0;
+  }
+  .also-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .also-title {
+    font-family: 'Noto Serif JP', "Hiragino Mincho ProN", serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .also-meta {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+    font-family: 'Noto Serif JP', "Hiragino Mincho ProN", serif;
+    line-height: 1.7;
+  }
+  .also-link {
+    font-family: 'Noto Serif JP', "Hiragino Mincho ProN", serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    transition: color 0.3s, transform 0.3s;
+  }
+  .also-card:hover .also-link {
+    color: var(--ink);
+  }
+  @media (max-width: 600px) {
+    .also-card { flex-direction: column; padding: 14px; gap: 16px; }
+    .also-thumb { width: 100%; height: 200px; }
+  }
+
   /* ===== Invitation thumbs ===== */
   .invitation-section { text-align: center; }
   .invitation-thumbs {
@@ -1079,6 +1164,23 @@
         <span class="must-text">Web 予約締切日 — <strong>2026 年 6 月 11 日（木）</strong></span>
       </div>
     </div>
+  </section>
+
+  <!-- Also on Show -->
+  <section class="also-section reveal">
+    <p class="section-eyebrow">Also on Show</p>
+    <h2 class="section-title">合わせてご覧ください</h2>
+    <a class="also-card" href="http://www.kobe-ribbon.co.jp/12491125171254012473653811248812500124831246312473/28-2026" target="_top" rel="noopener">
+      <div class="also-thumb">
+        <img src="ohchi-thumb.jpg" alt="第28回 大地農園 内見会 2026 大阪会場">
+      </div>
+      <div class="also-body">
+        <div class="also-tag">Ohchi Preview</div>
+        <div class="also-title">第 28 回 大地農園 内見会 2026<br>大阪会場</div>
+        <div class="also-meta">2026.6.4（木）— 6.5（金）<br>マイドームおおさか 2F 展示ホールD</div>
+        <div class="also-link">記事を読む →</div>
+      </div>
+    </a>
   </section>
 
   <!-- Resources -->
