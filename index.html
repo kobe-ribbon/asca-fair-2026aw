@@ -354,6 +354,177 @@
   }
   .line-btn:hover { transform: translateY(-2px); }
 
+  /* ===== 会場アクセス ===== */
+  .access-map {
+    position: relative;
+    margin: 1.5em 0 1.6em;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(58,28,74,0.15);
+    border: 1px solid rgba(58,28,74,0.08);
+  }
+  .access-map iframe {
+    display: block;
+    width: 100%;
+    height: 380px;
+    border: 0;
+  }
+  .access-map-link {
+    position: absolute;
+    right: 12px; bottom: 12px;
+    background: rgba(255,255,255,0.95);
+    padding: 8px 14px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--ink) !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    transition: transform 0.25s;
+  }
+  .access-map-link:hover { transform: translateY(-2px); }
+
+  .station-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 1.5em 0;
+  }
+  .station-card {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    gap: 16px;
+    align-items: center;
+    background: linear-gradient(135deg, #fff, #faf6ff);
+    border: 1px solid rgba(58,28,74,0.12);
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: 0 4px 16px rgba(58,28,74,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .station-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(58,28,74,0.12);
+  }
+  .station-card.primary {
+    background: linear-gradient(135deg, #fff5f5, #fff);
+    border-color: var(--primary);
+  }
+  .station-icon {
+    width: 70px; height: 70px;
+    background: linear-gradient(135deg, #e8e0f0, #f5eef9);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+  }
+  .station-card.primary .station-icon {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+  }
+  .station-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .station-line {
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-top: 3px;
+  }
+  .station-walk {
+    text-align: right;
+    line-height: 1;
+  }
+  .station-walk .num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    font-variant-numeric: tabular-nums;
+  }
+  .station-walk .unit {
+    font-size: 12px;
+    color: var(--ink-light);
+    margin-left: 2px;
+  }
+  .station-walk .label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--ink-light);
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+  .exit-info {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    padding: 10px 14px;
+    background: rgba(200,22,29,0.06);
+    border-radius: 8px;
+    font-size: 13.5px;
+    color: var(--ink);
+    line-height: 1.85;
+  }
+  .exit-info strong { color: var(--primary); }
+
+  .access-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1em 0 1.5em;
+    font-size: 14.5px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(58,28,74,0.06);
+  }
+  .access-table th, .access-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #f0eaf5;
+    vertical-align: middle;
+  }
+  .access-table tr:last-child th, .access-table tr:last-child td { border-bottom: 0; }
+  .access-table th {
+    background: linear-gradient(135deg, #3a1c4a, #5b2c70);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-size: 13.5px;
+  }
+  .access-table td:first-child {
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .access-table .dur {
+    color: var(--primary);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .access-table tr:hover td { background: rgba(200,22,29,0.03); }
+
+  .access-warn {
+    margin: 1.6em 0;
+    padding: 16px 20px;
+    background: #fff8e6;
+    border-left: 6px solid #e6a700;
+    border-radius: 0 8px 8px 0;
+    font-size: 15px;
+    line-height: 1.95;
+  }
+
+  @media (max-width: 600px) {
+    .station-card { grid-template-columns: 56px 1fr auto; padding: 14px 16px; gap: 12px; }
+    .station-icon { width: 56px; height: 56px; font-size: 24px; }
+    .station-walk .num { font-size: 22px; }
+    .access-table { font-size: 13px; }
+    .access-table th, .access-table td { padding: 10px 8px; }
+    .access-map iframe { height: 320px; }
+  }
+
   /* ===== 装飾 ===== */
   .deco-line {
     text-align: center;
@@ -512,11 +683,117 @@
   </p>
 
   <h3 class="reveal">会場アクセス</h3>
+  <p class="reveal">
+    会場は <strong>Osaka Metro「堺筋本町駅」徒歩約5分</strong>。展示会用の弊社契約駐車場のご用意はございませんので、<strong>電車・地下鉄など公共交通機関でのご来場</strong>をお願いいたします。
+  </p>
   <ul class="reveal">
     <li><strong>会場</strong>：大阪産業創造館 3階 マーケットプラザ</li>
-    <li><strong>住所</strong>：大阪市中央区本町一丁目4番5号</li>
-    <li><strong>交通手段</strong>：大阪会場では弊社契約駐車場のご案内はございません。<strong>公共交通機関でのご来場</strong>をお願いいたします。</li>
+    <li><strong>住所</strong>：〒541-0053 大阪市中央区本町一丁目4番5号</li>
+    <li><strong>TEL</strong>：06-6264-9800（大阪産業創造館 代表）</li>
   </ul>
+
+  <!-- 地図 -->
+  <div class="access-map reveal">
+    <iframe
+      src="https://maps.google.com/maps?q=%E5%A4%A7%E9%98%AA%E7%94%A3%E6%A5%AD%E5%89%B5%E9%80%A0%E9%A4%A8&z=16&ie=UTF8&iwloc=&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+      title="大阪産業創造館の地図"></iframe>
+    <a class="access-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E7%94%A3%E6%A5%AD%E5%89%B5%E9%80%A0%E9%A4%A8" target="_blank" rel="noopener">
+      Google Mapsで開く ↗
+    </a>
+  </div>
+
+  <h4 class="reveal">最寄り駅</h4>
+  <div class="station-grid reveal">
+    <div class="station-card primary">
+      <div class="station-icon">🚇</div>
+      <div>
+        <div class="station-name">堺筋本町駅</div>
+        <div class="station-line">Osaka Metro 中央線・堺筋線</div>
+      </div>
+      <div class="station-walk">
+        <span class="num">5</span><span class="unit">分</span>
+        <span class="label">Walk</span>
+      </div>
+      <div class="exit-info">
+        <strong>中央線をご利用の方</strong>：<strong>1号出口</strong>より徒歩約5分<br>
+        <strong>堺筋線をご利用の方</strong>：<strong>12号出口</strong>より徒歩約5分
+      </div>
+    </div>
+    <div class="station-card">
+      <div class="station-icon">🚇</div>
+      <div>
+        <div class="station-name">本町駅</div>
+        <div class="station-line">Osaka Metro 御堂筋線・中央線・四つ橋線</div>
+      </div>
+      <div class="station-walk">
+        <span class="num">10</span><span class="unit">分</span>
+        <span class="label">Walk</span>
+      </div>
+    </div>
+    <div class="station-card">
+      <div class="station-icon">🚇</div>
+      <div>
+        <div class="station-name">谷町四丁目駅</div>
+        <div class="station-line">Osaka Metro 中央線・谷町線</div>
+      </div>
+      <div class="station-walk">
+        <span class="num">12</span><span class="unit">分</span>
+        <span class="label">Walk</span>
+      </div>
+    </div>
+  </div>
+
+  <h4 class="reveal">主要駅からのアクセス</h4>
+  <p class="reveal" style="font-size:14px; color:var(--ink-light); margin-bottom:0.6em;">
+    最寄り「堺筋本町駅」までの目安所要時間（電車のみ・乗換時間込み／徒歩除く）です。
+  </p>
+  <div class="reveal" style="overflow-x:auto;">
+    <table class="access-table">
+      <thead>
+        <tr><th>出発駅</th><th>主な経路</th><th>所要時間</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>JR新大阪</td>
+          <td>御堂筋線「本町」→ 中央線「堺筋本町」</td>
+          <td><span class="dur">約16分</span></td>
+        </tr>
+        <tr>
+          <td>JR大阪／梅田</td>
+          <td>御堂筋線「本町」→ 中央線「堺筋本町」</td>
+          <td><span class="dur">約9分</span></td>
+        </tr>
+        <tr>
+          <td>難波</td>
+          <td>御堂筋線「本町」→ 中央線「堺筋本町」</td>
+          <td><span class="dur">約7分</span></td>
+        </tr>
+        <tr>
+          <td>天王寺</td>
+          <td>御堂筋線「本町」→ 中央線「堺筋本町」</td>
+          <td><span class="dur">約11分</span></td>
+        </tr>
+        <tr>
+          <td>京都</td>
+          <td>JR京都線（新快速）「新大阪」→ 御堂筋線「本町」→ 中央線「堺筋本町」</td>
+          <td><span class="dur">約45分</span></td>
+        </tr>
+        <tr>
+          <td>三宮</td>
+          <td>阪急/阪神「大阪梅田」→ 御堂筋線「本町」→ 中央線「堺筋本町」</td>
+          <td><span class="dur">約45分</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="access-warn reveal">
+    <strong>🚗 お車でのご来場について</strong><br>
+    展示会用の弊社契約駐車場のご案内はございません。会場（大阪産業創造館）地下には機械式の有料駐車場がございますが、<strong>満車の場合もございますので、できる限り公共交通機関のご利用</strong>をお願いいたします。
+  </div>
 
   <h3 class="reveal">asca社について</h3>
   <p class="reveal">
