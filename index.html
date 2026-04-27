@@ -571,6 +571,68 @@
     max-width: 520px;
   }
 
+  /* ===== Invitation thumbs ===== */
+  .invitation-section { text-align: center; }
+  .invitation-thumbs {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 32px auto 24px;
+    flex-wrap: wrap;
+    max-width: 560px;
+  }
+  .invitation-thumb {
+    display: block;
+    flex: 0 1 220px;
+    position: relative;
+    border: 1px solid var(--rule);
+    background: #fff;
+    padding: 6px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 4px 14px rgba(58, 28, 74, 0.08);
+    color: var(--ink-soft) !important;
+  }
+  .invitation-thumb:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(58, 28, 74, 0.18);
+    color: var(--gold) !important;
+  }
+  .invitation-thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .invitation-cap {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-family: 'Noto Serif JP', "Hiragino Mincho ProN", serif;
+    font-size: 12.5px;
+    letter-spacing: 0.22em;
+    color: inherit;
+    transition: color 0.3s;
+  }
+  .invitation-pdf-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 28px;
+    font-family: 'Noto Serif JP', "Hiragino Mincho ProN", serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft) !important;
+    border-bottom: 1px solid var(--rule);
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .invitation-pdf-link:hover {
+    color: var(--gold) !important;
+    border-color: var(--gold);
+  }
+  @media (max-width: 600px) {
+    .invitation-thumbs { gap: 14px; }
+    .invitation-thumb { flex: 0 1 calc(50% - 14px); padding: 4px; }
+    .invitation-cap { font-size: 11.5px; letter-spacing: 0.18em; margin-top: 8px; }
+  }
+
   /* ===== LINE Notice ===== */
   .line-notice {
     margin: 96px auto 80px;
@@ -899,6 +961,29 @@
     </p>
   </section>
 
+  <!-- 公式案内状 -->
+  <section class="block invitation-section reveal">
+    <p class="section-eyebrow">Invitation</p>
+    <h2 class="section-title">公式案内状</h2>
+    <p class="lead">
+      asca（アスカ商会）より発行されている案内状（両面）です。<br>
+      画像をクリックすると PDF をご覧いただけます。
+    </p>
+    <div class="invitation-thumbs">
+      <a href="asca-fair-2026aw.pdf" target="_blank" rel="noopener" class="invitation-thumb">
+        <img src="invitation-page-1.jpg" alt="asca FAIR 2026 AW 案内状 表面">
+        <span class="invitation-cap">表面</span>
+      </a>
+      <a href="asca-fair-2026aw.pdf" target="_blank" rel="noopener" class="invitation-thumb">
+        <img src="invitation-page-2.jpg" alt="asca FAIR 2026 AW 案内状 裏面（ご来場確認書・会場アクセス）">
+        <span class="invitation-cap">裏面</span>
+      </a>
+    </div>
+    <a class="invitation-pdf-link" href="asca-fair-2026aw.pdf" target="_blank" rel="noopener">
+      案内状（PDF）を開く →
+    </a>
+  </section>
+
   <!-- LINE Notice (重要な注意書き) -->
   <aside class="line-notice reveal">
     <div class="label">Important</div>
@@ -932,8 +1017,6 @@
 
   <!-- Resources -->
   <section class="resources reveal">
-    <a class="resource-link" href="asca-fair-2026aw.pdf" target="_blank" rel="noopener">案内状（PDF）</a>
-
     <p class="about-asca">
       asca — 1971年創業。アーティフィシャルフラワー業界のパイオニアとして、高品質な製品を提供し続けるブランドです。
     </p>
