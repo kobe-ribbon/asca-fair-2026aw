@@ -304,23 +304,25 @@
   }
   .day-block:last-child { margin-bottom: 0; }
   .day-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    display: block;
+    text-align: left;
     border-bottom: 1px solid var(--rule);
     padding-bottom: 14px;
     margin-bottom: 6px;
   }
   .day-num {
+    display: block;
     font-family: 'Noto Serif JP', "Hiragino Mincho ProN", serif;
-    font-size: 14px;
-    letter-spacing: 0.28em;
+    font-size: 12.5px;
+    letter-spacing: 0.32em;
     color: var(--gold);
     font-weight: 500;
+    margin-bottom: 6px;
   }
   .day-date {
+    display: block;
     font-family: 'Noto Serif JP', "Hiragino Mincho ProN", serif;
-    font-size: 18px;
+    font-size: 22px;
     letter-spacing: 0.06em;
     color: var(--ink);
     font-weight: 400;
@@ -894,18 +896,6 @@
         <span class="station-name">谷町四丁目駅<span class="line">Osaka Metro 中央線・谷町線</span></span>
         <span class="station-walk"><span class="num">12</span><span class="unit">分</span></span>
       </div>
-    </div>
-
-    <div class="access-block">
-      <div class="access-heading">主要駅から堺筋本町駅まで</div>
-      <table class="journey-table">
-        <tr><th>JR新大阪</th><td class="path">御堂筋線「本町」→ 中央線「堺筋本町」</td><td class="dur">16<span class="unit">分</span></td></tr>
-        <tr><th>JR大阪／梅田</th><td class="path">御堂筋線「本町」→ 中央線「堺筋本町」</td><td class="dur">9<span class="unit">分</span></td></tr>
-        <tr><th>難波</th><td class="path">御堂筋線「本町」→ 中央線「堺筋本町」</td><td class="dur">7<span class="unit">分</span></td></tr>
-        <tr><th>天王寺</th><td class="path">御堂筋線「本町」→ 中央線「堺筋本町」</td><td class="dur">11<span class="unit">分</span></td></tr>
-        <tr><th>京都</th><td class="path">JR新快速「新大阪」→ 御堂筋線 → 中央線「堺筋本町」</td><td class="dur">45<span class="unit">分</span></td></tr>
-        <tr><th>三宮</th><td class="path">阪急／阪神「大阪梅田」→ 御堂筋線 → 中央線「堺筋本町」</td><td class="dur">45<span class="unit">分</span></td></tr>
-      </table>
     </div>
 
     <p class="small-note">
