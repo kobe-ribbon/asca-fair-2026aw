@@ -172,37 +172,91 @@
   .lead strong { color: var(--ink); font-weight: 500; }
 
   /* ===== CTA ===== */
-  .cta-wrap { text-align: center; margin: 72px 0; }
+  .cta-wrap {
+    text-align: center;
+    margin: 88px 0;
+    padding: 64px 24px;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    background: linear-gradient(to bottom, rgba(156,134,87,0.04), transparent 30%, transparent 70%, rgba(156,134,87,0.04));
+    position: relative;
+  }
+  .cta-wrap::before, .cta-wrap::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px; height: 8px;
+    background: var(--paper);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+  }
+  .cta-wrap::before { top: -4.5px; }
+  .cta-wrap::after { bottom: -4.5px; }
+  .cta-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    font-weight: 400;
+  }
+  .cta-heading {
+    font-family: 'Noto Serif JP', "Hiragino Mincho ProN", serif;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+    margin: 0 0 32px;
+    line-height: 1.5;
+  }
   .cta-btn {
     display: inline-block;
-    padding: 22px 56px;
-    border: 1px solid var(--ink);
-    color: var(--ink) !important;
-    font-family: 'Noto Serif JP', "Hiragino Mincho ProN", serif;
-    font-size: 16px;
-    letter-spacing: 0.32em;
-    font-weight: 400;
-    transition: background 0.5s ease, color 0.5s ease, letter-spacing 0.5s ease;
-  }
-  .cta-btn:hover {
+    padding: 28px 76px;
     background: var(--ink);
     color: var(--paper) !important;
+    font-family: 'Noto Serif JP', "Hiragino Mincho ProN", serif;
+    font-size: 18px;
+    letter-spacing: 0.32em;
+    font-weight: 500;
+    border: 1px solid var(--ink);
+    outline: 1px solid var(--gold);
+    outline-offset: 6px;
+    box-shadow: 0 12px 32px rgba(26, 26, 26, 0.22);
+    transition: background 0.55s ease, color 0.55s ease, outline-color 0.55s ease, letter-spacing 0.55s ease, box-shadow 0.55s ease, transform 0.4s ease;
+  }
+  .cta-btn:hover {
+    background: var(--gold);
+    color: #ffffff !important;
+    border-color: var(--gold);
+    outline-color: var(--ink);
     letter-spacing: 0.42em;
+    box-shadow: 0 16px 40px rgba(156, 134, 87, 0.42);
+    transform: translateY(-2px);
   }
   .cta-btn .arrow {
     display: inline-block;
-    margin-left: 14px;
+    margin-left: 18px;
     transition: transform 0.5s;
   }
-  .cta-btn:hover .arrow { transform: translateX(8px); }
+  .cta-btn:hover .arrow { transform: translateX(10px); }
   .cta-note {
-    margin-top: 28px;
+    margin-top: 36px;
     font-size: 13px;
     color: var(--ink-soft);
     letter-spacing: 0.06em;
     line-height: 2;
   }
   .cta-note strong { color: var(--gold); font-weight: 500; }
+  @media (max-width: 600px) {
+    .cta-wrap { padding: 48px 18px; margin: 64px 0; }
+    .cta-heading { font-size: 19px; letter-spacing: 0.16em; margin-bottom: 24px; }
+    .cta-btn { padding: 22px 40px; font-size: 15px; letter-spacing: 0.24em; outline-offset: 5px; }
+    .cta-btn:hover { letter-spacing: 0.3em; }
+    .cta-eyebrow { font-size: 11.5px; letter-spacing: 0.28em; }
+  }
 
   /* ===== Schedule ===== */
   .day-block {
@@ -572,27 +626,8 @@
 
 <div class="container">
 
-  <!-- Brand -->
-  <header class="brand reveal">
-    <div class="brand-mark">asca <em>FAIR</em></div>
-    <div class="brand-series">2026 秋冬 新作展示会</div>
-  </header>
-
-  <!-- Overture -->
-  <section class="overture reveal">
-    <hr class="gold-rule">
-
-    <div class="dates">17<span class="sep">—</span>18</div>
-    <div class="date-meta">2026 年 6 月<span class="dow">（水・木）</span></div>
-
-    <hr class="gold-rule">
-
-    <p class="tagline serif">— 来季の物語、はじまる二日間。</p>
-    <p class="venue-tag">会場 — 大阪産業創造館</p>
-  </section>
-
   <!-- Visual -->
-  <figure class="visual reveal">
+  <figure class="visual reveal" style="margin-top: 0;">
     <img src="hero.png" alt="asca FAIR 2026 AW 大阪会場のご案内">
   </figure>
 
@@ -609,8 +644,10 @@
 
   <!-- CTA primary -->
   <section class="cta-wrap reveal">
+    <p class="cta-eyebrow">Reservation</p>
+    <h2 class="cta-heading">ご予約はこちらから</h2>
     <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSenECvu8PgAcCOSQR6iOD50SKwz-JbGMb60QfhSB_oVa64EkQ/viewform" target="_blank" rel="noopener">
-      ご予約はこちら<span class="arrow">→</span>
+      ご予約フォームへ進む<span class="arrow">→</span>
     </a>
     <p class="cta-note">
       ご予約フォームの「お取引先名（ご帳合先名）」欄に必ず<strong>「神戸リボン」</strong>とご記入ください。<br>
@@ -737,8 +774,10 @@
 
   <!-- Closing CTA -->
   <section class="cta-wrap reveal">
+    <p class="cta-eyebrow">Reservation</p>
+    <h2 class="cta-heading">ご予約はこちらから</h2>
     <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSenECvu8PgAcCOSQR6iOD50SKwz-JbGMb60QfhSB_oVa64EkQ/viewform" target="_blank" rel="noopener">
-      ご予約はこちら<span class="arrow">→</span>
+      ご予約フォームへ進む<span class="arrow">→</span>
     </a>
     <p class="cta-note">
       Web 予約締切日 — <strong>2026 年 6 月 11 日（木）</strong><br>
